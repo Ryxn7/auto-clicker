@@ -5,7 +5,7 @@ from pynput.keyboard import KeyCode, Listener
 from pynput import mouse
 
 
-delay = 0.14
+delay = 0.05
 button = Button.left
 start_stop_key = KeyCode(char='1')
 stop_key = KeyCode(char='2')
@@ -22,11 +22,11 @@ class click(threading.Thread):
         self.program_running = True
         self.mouse_position = []
         self.button_names = button_names
-        self.postions = []
+        self.positions = []
 
     def setup(self):
         for b in self.button_names:
-            print(f"Click the '{b}' button...")
+            print(f"Click where you would like your cursor to be placed...")
 
             def on_click(x, y, button, pressed):
                 if pressed:
